@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microplastic AI Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>🔬 Smart Plastic AI Detection</h1>
+                <button id="toggleUIBtn" class="btn-toggle">✨ Switch to Advanced Dashboard</button>
+            </div>
+            <p>Laboratory Grade Microplastic Analysis Dashboard</p>
+        </header>
+
+        <!-- Standard UI (Existing) -->
+        <div id="standardUI">
+            <main>
+                <!-- Control Section -->
+                <section class="controls-section card">
+                    <div class="actions">
+                        <button id="startCamBtn" class="btn-primary"><span>🎥</span> Start Real-Time Feed</button>
+                        <button id="stopCamBtn" class="btn-danger"><span>⏹️</span> Stop Camera</button>
+                        
+                        <div style="flex: 1; min-width: 20px;"></div>
+
+                        <div class="upload-controls">
+                            <label for="imageInput" class="custom-file-upload">
+                                📁 Choose Sample Image
+                            </label>
+                            <input type="file" id="imageInput" accept="image/*">
+                            <button id="uploadBtn" class="upload-btn">Analyze Static Upload</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main Display -->
+                <div class="main-layout">
+                    <!-- Video/Image Container -->
+                    <section class="viewport-card card">
+                        <div class="viewport-header">
+                            <h3>Vision Stream</h3>
+                            <div id="statusBadge" class="status-badge">System Ready</div>
+                        </div>
+                        <div id="visionContainer">
+                            <img id="displayImg" src="https://placehold.co/1280x720/1e293b/94a3b8?text=Vision+System+Offline" alt="Vision Stream">
+                        </div>
+                    </section>
+
+                    <!-- Analysis Sidebar -->
+                    <aside class="analytics-panel">
+                        <div class="card" style="height: 100%; display: flex; flex-direction: column; gap: 1rem;">
+                            <h3>Analytics</h3>
+                            
+                            <div class="stat-group" id="countGroup">
+                                <label>Particles Counted</label>
+                                <div class="value" id="pCount">0</div>
+                            </div>
+
+                            <div class="stat-group" id="typesGroup">
+                                <label>Classification</label>
+                                <div class="type-tags" id="pTypes">
+                                    <span class="tag">Scan Ready</span>
+                                </div>
+                            </div>
+
+                            <div class="system-logs" id="logBox">
+                                [SYSTEM] Initializing models...<br>
+                                [SYSTEM] GPU Acceleration: ENABLED<br>
+                                [SYSTEM] Ready for analysis.
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </main>
+        </div>
+
+        <!-- Advanced Dashboard (New) -->
+        <div id="advancedDashboard" class="adv-dashboard" style="display: none;">
+            <div class="adv-grid">
+                <!-- Left: Metrics -->
+                <div class="adv-col-metrics">
+                    <div class="adv-card main-metric">
+                        <label>MICROPLASTIC CONCENTRATION</label>
+                        <div class="metric-value-large"><span id="advConcentration">0.00</span>%</div>
+                        <div class="metric-visual">
+                            <div class="progress-bar"><div id="advProgress" style="width: 0%"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="adv-sub-grid">
+                        <div class="adv-card">
+                            <label>DETECTION STATUS</label>
+                            <div class="adv-status" id="advStatus">SAFE</div>
+                            <div class="adv-subtext">Detected: <span id="advDetected">NO</span></div>
+                        </div>
+                        <div class="adv-card">
+                            <label>TOTAL PARTICLES</label>
+                            <div class="adv-count" id="advTotal">0</div>
+                            <div class="adv-subtext">Cumulative Scan</div>
+                        </div>
+                    </div>
+
+                    <div class="adv-card category-breakdown">
+                        <label>PARTICLE CLASSIFICATION</label>
+                        <div class="cat-list">
+                            <div class="cat-item">
+                                <div class="dot pellets"></div>
+                                <span class="cat-name">Pellets</span>
+                                <span class="cat-val" id="catPellets">0</span>
+                            </div>
+                            <div class="cat-item">
+                                <div class="dot fragments"></div>
+                                <span class="cat-name">Fragments</span>
+                                <span class="cat-val" id="catFragments">0</span>
+                            </div>
+                            <div class="cat-item">
+                                <div class="dot fibers"></div>
+                                <span class="cat-name">Fibers</span>
+                                <span class="cat-val" id="catFibers">0</span>
+                            </div>
+                            <div class="cat-item">
+                                <div class="dot films"></div>
+                                <span class="cat-name">Films</span>
+                                <span class="cat-val" id="catFilms">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="adv-card live-status-card">
+                        <div class="live-status-pill" id="advLivePill">WAITING</div>
+                        <div class="adv-timestamp" id="advClock">00:00:00</div>
+                    </div>
+                </div>
+
+                <!-- Right: Vision -->
+                <div class="adv-col-vision">
+                    <div class="adv-card vision-panel">
+                        <div class="vision-scan-line"></div>
+                        <div class="vision-corners"></div>
+                        <div class="vision-label">HUD VISION STREAM v2.4</div>
+                        <img id="advDisplayImg" src="https://placehold.co/1280x720/050b1a/1e293b?text=Vision+Feed+Standby" alt="Vision Stream">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

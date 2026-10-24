@@ -1,0 +1,7 @@
+
+train: E:\micro plastic project\scripts\..\data\microplastics_dataset\train/images
+val: E:\micro plastic project\scripts\..\data\microplastics_dataset\val/images
+test: E:\micro plastic project\scripts\..\data\microplastics_dataset\test/images
+
+nc: 3
+names: ['fiber', 'fragment', 'bead']

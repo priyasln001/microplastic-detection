@@ -1,0 +1,12 @@
+numpy
+pandas
+opencv-python
+torch
+torchvision
+ultralytics
+streamlit
+matplotlib
+Pillow
+scikit-learn
+pyserial
+# RPi.GPIO # Un-comment if running on Raspberry Pi

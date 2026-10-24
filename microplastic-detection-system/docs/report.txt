@@ -1,0 +1,19 @@
+Project Report: Microplastic Detection System
+
+1. Introduction:
+Microplastics are a global environmental crisis. Manual detection is inefficient. This project provides an AI-driven solution.
+
+2. Hardware:
+Uses Raspberry Pi as an edge node to capture high-resolution micrographs of filtered water samples or waste containers.
+
+3. Artificial Intelligence:
+YOLOv8 is utilized for its exceptional speed. The model is trained on distinct categories: Fibers (elongated), Fragments (jagged), and Beads (spherical).
+
+4. Implementation:
+The system follows a full-stack architecture. Flask serves the AI results via a JSON API to a modern web interface.
+
+5. Validation:
+Testing with sample micrographs shows robust detection even in noisy sludge backgrounds.
+
+6. Conclusion:
+The system effectively bridges the gap between hardware engineering and computer vision for environmental protection.

@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Streamlit (Main Dashboard)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "${workspaceFolder}/app.py"
+            ],
+            "jinja": true,
+            "smartStep": true
+        },
+        {
+            "name": "Python: Flask Backend (Micro-System)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/microplastic-detection-system/backend/app.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome (Flask Frontend)",
+            "url": "http://localhost:5000",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome (Streamlit Dashboard)",
+            "url": "http://localhost:8501",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

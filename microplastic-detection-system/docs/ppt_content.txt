@@ -1,0 +1,25 @@
+Slide 1: Title
+- Smart Multi-Environment Microplastic Detection System
+- AI + IoT Integration
+
+Slide 2: Objectives
+- Automate detection in Water, Waste, and Sludge.
+- Classify into Fiber, Fragment, Bead.
+- Provide real-time remote monitoring.
+
+Slide 3: Technology Stack
+- Vision: YOLOv8 (PyTorch)
+- Backend: Flask API
+- Frontend: HTML5/JS Web Dashboard
+- Hardware: Raspberry Pi CSI/USB Camera
+
+Slide 4: System Architecture
+- Sample Collection -> Image Capture -> Preprocessing -> AI Inference -> Dashboard Analytics
+
+Slide 5: Results
+- Real-time bounding box overlay.
+- High precision on micro-particle detection.
+- Exportable CSV reports.
+
+Slide 6: Conclusion
+- Scalable, cost-effective solution for environmental research.
